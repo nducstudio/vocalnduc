@@ -1,0 +1,489 @@
+/* Responsive layout */
+    .column {
+        float: left;
+        width: 33.33%;
+        padding: 12px;
+        }
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+        }
+@media screen and (max-width:425px) {
+    .box1.area { width: 100%; display: block;}
+    }
+@media screen and (max-width:768) {
+    #nav li a:not(.active) {display: none;}
+    .NavMenu {display: block !important}
+    .navRWD li a {display: inline-block!important;}
+    .navRWD li {float: none !important;}
+    .navRWD .NavMenu{position: absolute;right: 0;top: 0;}
+    
+}
+/*______ Nav _________*/
+.NavMenu{
+    float: right;
+    display: none;
+    text-align: center;
+    margin: 10px 5px;
+    padding: 10px 10px;
+    text-decoration: none;
+    color: #63717d;
+    border-radius: 15px;
+    }
+#nav {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    display: block; 
+    z-index: 1;
+    margin: 0px 2% 0px;
+    border-radius: 15px;
+    background: #b4cff5;
+    box-shadow: 0px 5px 20px #A7B3BE, 0px -3px 9px #fff;
+    animation: NavAppear 1s ; 
+    }
+ul {
+    list-style-type: none;
+    overflow: hidden;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    }
+    #nav li {float: left;}
+    #nav a:not(.NavMenu){
+    display: block;
+    text-align: center;
+    margin: 10px 5px;
+    padding: 10px 10px;
+    text-decoration: none;
+    color: #63717d;
+    transition:0.6s;
+    border-radius:15px;
+    }
+    #nav a:hover {
+    background: #eef2f8;
+    border-radius:15px;
+    color: #55c7ff;
+    }
+    .active, .navRWD .NavMenu {
+    color: #fff;
+    background: linear-gradient(145deg, #5bcdff, #37a9fe);
+    box-shadow: 0px 1px 3px #888, -1px -1px 2px #FFE;
+    }
+
+/*--------- Global FX ---------*/
+* {box-sizing: border-box;transition: 0.3s;}
+@keyframes NavAppear {
+        from {opacity: 0;transform: translateY(-20px); }
+        to {opacity: transform: translateY(0px);}
+        }
+@keyframes OpaFadeIn {
+        from {opacity: 0;}
+        to {opacity: 1;}
+        }
+@keyframes OpaFadeOut {
+        from {opacity: 1;}
+        to {opacity: 0;}
+        }
+@keyframes PopText {
+    0%  { font-size: 1.2em ; color: white; }
+    10% { color: red; }
+    20% { color: white; }
+    30% { color: red; }
+    40% { color: white; }
+    50% { color: white; }
+    60% { color: red; }
+    70% { font-size: 1.2em ;color: yellow; }
+    100% { font-size: 1em; color: white; }
+    }
+@keyframes SwipeRight {
+    from{transform: translateX(-50%)}
+    to{transform: translateX(0%)}
+    }
+@keyframes SwipeLeft {
+    from{transform: translateX(50%)}
+    to{transform: translateX(0%)}
+    }
+.SwipeLeft{
+        animation: SwipeLeft 0.2s ease-out !important;
+    }
+.SwipeRight{
+        animation: SwipeRight 0.2s ease-out !important;
+    }
+.hideFade{
+    opacity: 0;
+    animation-name: OpaFadeOut;
+    animation-duration: 0.5s;
+    animation-delay: 0s;
+}
+
+/*________ INFINITY PROGRESS BAR ________*/
+.progress-inf, .progress-inf:before {
+    height: 4px;
+    width: 100%;
+    margin: 0;
+    }
+.progress-inf {
+    border-radius: 20px;
+    background-color: #FFF;
+    display: -webkit-flex;
+    display: flex;
+    margin: 5px;
+    }
+.progress-inf:before {
+    background-color: #faae00;
+    content: '';
+    -webkit-animation: running-progress 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    animation: running-progress 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+#ProgressBar{
+    width: 0%;
+    height: 6px;
+    background-color: #FAAE00;
+    border-radius: 10px;
+    transition: 0;
+    transition: none;
+    }
+#ProgressBox{
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 10px;
+    }
+@-webkit-keyframes running-progress {
+    0% { margin-left: 0px; margin-right: 100%; }
+    50% { margin-left: 25%; margin-right: 0%; }
+    100% { margin-left: 100%; margin-right: 0; }
+    }
+@keyframes running-progress {
+    0% { margin-left: 0px; margin-right: 100%; }
+    50% { margin-left: 25%; margin-right: 0%; }
+    100% { margin-left: 100%; margin-right: 0; }
+    }
+/*________ END PROGRESS BAR ________*/
+
+.box_sm:hover, .box1:hover, #NotiBox:hover, #nav:hover, #PopupClose:hover {
+    box-shadow: 0px 3px 7px 2px #020202, 0px -1px 2px 1px #545252;
+}
+label {display:inline-block}
+label:hover, label:active, input:hover+label, input:active+label, #NotiClose:hover, a:hover{
+    color:#f57546;
+    cursor: pointer;
+    }  
+.preload{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #FFF;
+    z-index: 100;
+}
+
+/*_____ Elements ______ */
+body {
+font-family: 'Arsenal';font-size: 17px;
+position: relative;
+background-color:#1b1a1a;
+color: #9c9ea0;
+}
+p {max-width: 1920px;}
+a {color: #41B3FF;text-decoration: none;}
+hr {border: 1px solid #4e4a4a;}
+b {color: #accbda;}
+.Header {
+text-align: center;
+padding: 0.5em;
+color: #555;
+font-size: 1.4em;
+}
+#HeaderPath {color: #5c6065; font-size: 0.6em;}
+#main_content {
+position: static;
+max-width: max-content;
+margin: 1em auto 2em;
+}
+#footer {
+display: block;
+}
+#footer:target{
+    animation: NavAppear 1s ; 
+}
+input {
+    border-radius: 5px;
+    padding: 8px;
+    border-style: none;
+    background: #efefef;
+}
+input[type="text"] {
+    margin:5px;
+}
+input[type="text"]:disabled {
+    background: #000000 !important;
+    background-color: #000000 !important;
+    border-color: #000000 !important;
+    color: #5a5757;
+}
+input[type="button"] {
+    margin: 5px;
+}
+.input_file {
+border-radius: 15px;
+padding: 10px;
+margin: 10px;
+width: -webkit-fill-available;
+height: 100px;
+background: #efefef;
+border-style: dashed;
+border-width: 3px;
+border-color: coral;
+}
+.input_file:hover {
+cursor: pointer;
+background: #7d7370;
+}
+::placeholder{
+    color: #BBB;
+}
+::-webkit-scrollbar-track {
+    background: #555555;
+    border-radius: 20px;
+}
+::-webkit-scrollbar-thumb {
+    background: #6c6c6c;
+    border-radius: 20px;
+}
+::-webkit-scrollbar-button {
+    background: #6c6c6c;
+}
+::-webkit-scrollbar {
+    background: #3e3e3e;
+    width: 9px;
+    height: 9px;
+}
+button {
+    font-size: 15px;
+    color: #fff;
+    background: #41B3FF;
+    border-radius: 5px;
+    border-style: none;
+    }
+.button {
+cursor:pointer;
+font-size: 25px;
+text-align: center;
+background: #41B3FF;
+height: 47px;
+width: 90%;
+margin: 5px auto;
+padding:5px;
+border-radius:15px;
+border-style: hidden;
+display: block;
+}
+.button:hover {
+background: #f16c00;
+color: white;
+}
+.DebugTool {
+position: fixed;
+z-index: 3;
+bottom: 0px;left: 0;right: 0;
+background: rgb(0 0 0 / 70%);
+display: inline-block;
+border-radius: 10px 10px 0 0;
+max-width: max-content;
+margin: 0 auto;
+padding: 15px 15px 8px;
+display:flex;
+}
+.DebugTool button {   
+color: #952 !important;
+text-decoration: none;
+width: 40px;
+height: 40px;
+cursor: pointer;
+border-style: hidden;
+margin: auto 8px 0px;
+position: relative;
+}
+.DebugTool button:hover{
+width: 60px;
+height: 60px;  
+}
+.itemlist {counter-increment: itemID;}
+.itemlist:hover {background: #734433;}
+.code {
+    font-family: monospace;
+    font-size: 0.8em;
+    text-align: left;
+    color: green;
+    background: black;
+}
+.codeFailed{
+    color: #907a7a;
+}
+label { display: inline-block; }
+#YoutubeChannelSub {
+    margin: 10px auto;
+    padding: 10px;
+    max-width: 900px;
+    text-align: center;
+    background: #1a3746;
+    border-radius: 10px;
+}
+
+/*______ Other Sets _________*/
+.area {
+display:inline-table;
+margin:5px 2px;
+padding:5px;
+}
+.area_sm {
+margin:3px;
+padding:5px;
+}
+.box1 {
+    border-radius: 9px;
+    background: #2b2b2b;
+    animation: OpaFadeIn 1s ease-out;
+    }
+.box1 .title{
+    text-align: center;
+    color: #d6d2d2;
+    font-size: 1.2em;
+    }
+.box1:hover .title{color: #76d0ff;  }
+.box_sm {
+background: linear-gradient(145deg, #89a, #bababa);
+box-shadow: 3px 3px 5px #888, 
+-3px -3px 9px #fff;
+}
+.box_sink{background: #3c3a3a;}
+.bor {
+    border-radius:15px;
+    }
+.bor:hover {border-color: #464646;}
+.HL {
+    color: #707e8a;
+    background:#dc6821;
+    border-radius: 3px;
+    padding: 1px 5px;
+    }
+.HLfaded, strong, HL {
+    color:#fff;
+    background: #33596b;
+    border-radius: 10px;
+    padding: 4px;
+    margin: 1px;
+    display: inline-block;
+    }
+.round {border-radius:15px;}
+.red {color:red;}
+.yellow {color: yellow}
+.white {color: white}
+.center {text-align: center;}
+.left {text-align: left;}
+.sm {font-size: 0.7em}
+.fullwidth{width: 100%}
+
+/*_______ Notification and PopUp _______ */
+#NotiBox {
+    padding: 20px;
+    margin: auto;
+    background-color:#1a3746;
+    border-radius:15px;
+    color: white;
+    text-align: center;
+    width:90%;
+    max-width:900px;
+}
+#NotiBox a { color: #f57647;}
+#NotiBox a:hover { color: #f9eb30;}
+#NotiClose {
+line-height: 20px;
+color: white;
+float: right;
+font-size: 5em;
+cursor: pointer;
+}
+.overlay {
+position: fixed;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+background: rgba(0, 0, 0, 0.8);
+transition: opacity 500ms;
+visibility: hidden;
+opacity: 0;  
+}
+.overlay:target {
+visibility: visible;
+opacity: 1;
+z-index: 1;
+overflow: auto;
+}
+.popup {
+margin: 2vh auto;
+background: #333;
+text-align: center;
+border-radius: 15px;
+width: 90%;
+max-width: 600px;
+word-break: break-word;
+position: relative;
+z-index: 1;
+}
+.popup .title {
+background: #505050;
+padding: 3px;
+color: #999;
+margin-top: 0;
+}
+#PopupClose:hover {color: #fff;  background: #e22;}
+#PopupClose { /* The popup close button */
+    transition: all 200ms;
+    font-size: 20px;
+    text-decoration: none;
+    color: #333;
+    background: #ff8470;
+    float:right;
+    width:40px;
+}
+#PopupNode {padding: 0 10px 15px;}
+
+/*--------- TABLE ---------*/
+tr {background: #484848;}
+table {border-spacing: 1.5px; counter-reset: itemID; font-size: 14px;}
+th {
+    color: #ffffff;
+    background: linear-gradient(0deg, #484848, #476477);
+    background: #375869;
+    text-align: center;
+    line-height: 2em;
+}
+    td, th {padding: 0.2em;}
+/* td:first-child::before{ content: counter(itemID);} */
+
+
+
+/*--------- For Youtube Embed iframe Respondsive ---------*/
+
+.RP-Container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+  }
+  
+  /* Then style the iframe to fit in the container div with full height and width */
+  .RP-Embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+  }

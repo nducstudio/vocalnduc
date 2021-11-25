@@ -1,0 +1,154 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Không tồn tại trang này </title>
+    <link rel="stylesheet" href="https://cloud.akivn.net/css/tool.css?u=4">
+        
+    <link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Arsenal&display=swap' rel='stylesheet'>
+    <link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
+    <script src="https://cloud.akivn.net/js/jquery.js"></script>
+    <script src="https://cloud.akivn.net/js/akigetinfo.js"></script>
+    <script src="https://cloud.akivn.net/js/platform.js" defer></script>
+    
+    <!--    For Favicon-->
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon" sizes="57x57" href="/static/favicon/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/static/favicon/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/static/favicon/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/static/favicon/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/static/favicon/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/static/favicon/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/static/favicon/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/static/favicon/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="/static/favicon/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="/static/favicon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png">
+        <link rel="manifest" href="/static/favicon/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="/static/favicon/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+    
+    
+     
+     
+</head>
+<body>
+<span id="AllBody" class="center">
+<div class="Header">
+        <div id="HeaderPath"><a href=/vay_cuoi_trung_tu_cover_dun_-2042004669844577409.mp3>RELOAD <i class="lni lni-reload"></i></a></div>
+        </div>  
+<div id="NotiBox" class="hideFade">
+        <span id="NotiClose" onclick="NotiClear()">&times;</span>
+        <span id="NotiNode">  </span>
+    </div>
+<div id="Popup1" class="overlay">
+<div class="popup">
+        <a id="PopupClose" href="#CloseOverlay">&times;</a>
+        <p class=title>Bấm phím ESC hoặc click X để ẩn</p>
+        <div id="PopupNode">Đây là cửa sổ popup để thông báo một chuyện gì đó quan trọng. <hr> Đây là Nội dung mặc định (base.html) </div>
+    </div>
+</div>
+
+<!-- Main content -->
+<div id="main_content">
+<div class="center">
+<h2>404 Not Found - Trang không tồn tại!</h2>
+<p> Vui lòng quay lại </p>
+</div>
+</div> <!-- dont use class box1, avoid :hover-->
+
+<!-- Footer -->
+    <div id="footer" style="display:none">
+        <div class="row">
+            <div class="column box1">
+            </div>
+    </div>
+    <span id=CountVisitor style="display: none"></span>
+</span>
+<script>
+    var cur_path    = "/vay_cuoi_trung_tu_cover_dun_-2042004669844577409.mp3"
+    var preload     = document.getElementById('AllBody');
+    var NotiBox     = document.getElementById('NotiBox');
+    var NotiNode    = document.getElementById('NotiNode');
+    var PopupNode   = document.getElementById('PopupNode');
+    var CountVisitor= document.getElementById('CountVisitor');
+    var Progress_Inf= "<div class=progress-inf></div>";
+    var progress_box= "<br><div id=ProgressBox><div id=ProgressBar></div></div>";
+    var prevScrollpos = window.pageYOffset;
+
+    function NotiPush(node){
+        if (node === undefined) { node = "Lệnh NotiPush(node) đang có arguments 'node' là rỗng. <br> Viết được thẻ HTML <hr> <h3>H3 style</h3>"; }
+        NotiBox.classList.remove('hideFade');
+        NotiBox.style.display = "block";
+        NotiBox.style.padding = "20px";
+        NotiNode.innerHTML = node;
+        window.location.href='#';//go to top
+        }
+    function NotiShow(){
+        NotiBox.classList.remove('hideFade');
+        NotiBox.style.display = "block";
+        NotiBox.style.padding = "20px";
+        }
+    function NotiHide(){
+        NotiBox.classList.add('hideFade');
+        NotiBox.style.visibility = "hidden";
+        NotiBox.style.padding = "0px";
+        }
+    function NotiClear(){
+        NotiNode.innerHTML = "";
+        NotiBox.style.display = "none";
+        NotiBox.style.padding = "0px";
+        }
+    function PopupPush(node,PreventClose){
+        var handler_=function(event) {
+            const key = event.key;
+            if (key === "Escape") { window.location.href='#CloseOverlay'; }
+            }
+        window.location.href='#Popup1';
+        PopupNode.innerHTML=node;
+        if ( PreventClose == "1" ) {
+            document.getElementById("PopupClose").style.display='none';
+            document.getElementById("Popup1").querySelector("p").style.display="none";
+            document.removeEventListener('keydown', handler_);
+        }else{
+            document.addEventListener('keydown', handler_);
+        }}
+    function PopupClose(){
+        window.location.href='#CloseOverlay';
+    }
+    function progress_bar_run(s){
+        var i = s;
+        var ProgressBar = document.getElementById("ProgressBar");//Must create first by put the "progress_s_box" var (HTML) somewhere
+        var width = 0;
+        var frame_ = setInterval(frame, i);
+        function frame() {
+            if (width >= 100) { width=0; i=1 }
+            else {
+                width=width+0.1;
+                ProgressBar.style.width = width + "%";
+            }
+        }
+    }
+    function I_Am_Online(){
+        $.get("/api", {visitor:akiget_ip, RqPath:"/vay_cuoi_trung_tu_cover_dun_-2042004669844577409.mp3"})};
+    function CountVisitor_(){
+        Count = $.get("/api", {WhoOnl:"/vay_cuoi_trung_tu_cover_dun_-2042004669844577409.mp3"},function(data){
+            CountVisitor.innerHTML = Count.responseText;
+        });
+    }
+    // For page already loading!
+    $( document ).ready(function() {
+        if ( "" !== "" ) {NotiShow()};// Display NotiBox If not null (assigned by flask)
+        
+        I_Am_Online()
+        setInterval(function(){ I_Am_Online(); }, 10000);
+        DocumentReady();
+    });
+</script>
+</body>
+</html>
